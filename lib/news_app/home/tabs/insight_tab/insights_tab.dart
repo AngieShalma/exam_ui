@@ -1,7 +1,8 @@
-import 'package:exam_ui/news_app/home/tabbar/discover_tabbar.dart';
-import 'package:exam_ui/news_app/home/tabbar/most_viewed_tabbar.dart';
-import 'package:exam_ui/news_app/home/tabbar/news_tabbar.dart';
-import 'package:exam_ui/news_app/home/tabbar/saved_tabbar.dart';
+
+import 'package:exam_ui/news_app/home/tabs/insight_tab/tabbar/discover_tabbar.dart';
+import 'package:exam_ui/news_app/home/tabs/insight_tab/tabbar/most_viewed_tabbar.dart';
+import 'package:exam_ui/news_app/home/tabs/insight_tab/tabbar/news_tabbar.dart';
+import 'package:exam_ui/news_app/home/tabs/insight_tab/tabbar/saved_tabbar.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +33,7 @@ class insightsTab extends StatelessWidget {
                       //     color: Color(0xffFFFFFF),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                          width: 1, color: Colors.grey.withOpacity(0.3))),
+                          width: 1, color: Color(0xffD0D5DD))),
                   child: TextFormField(
                     onTap: () {},
                     decoration: InputDecoration(
@@ -69,6 +70,7 @@ class insightsTab extends StatelessWidget {
                     color: Color(0xffD6BBFB)
                   ),
                   indicator: BoxDecoration(
+
                       borderRadius: BorderRadius.circular(50), // Creates border
                       color: Colors.transparent),
                   tabs: [
@@ -104,7 +106,7 @@ class insightsTab extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.grey.withOpacity(0.3),
+                          color: Color(0xffD0D5DD),
                         ));
   }
 
@@ -117,7 +119,7 @@ class insightsTab extends StatelessWidget {
         height: 40,
         //width: 99,
         decoration: BoxDecoration(
-            color: Color(0xffF4EBFF),
+            color: Color(0xffE4E7EC),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Color(0xffD6BBFB), width: 1)),
         child: Center(

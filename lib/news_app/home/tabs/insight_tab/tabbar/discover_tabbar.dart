@@ -72,10 +72,12 @@ List <String>items=[
               height: 196,
               width: 326,
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.1),
+               border:Border.all(width:1,color: Color(0xffE4E7EC)),
+                color: Color(0xffF2F4F7),
                 borderRadius: BorderRadius.circular(10)
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Image.asset("assets/images/news/Doctor.png"),
                   Column(
@@ -113,7 +115,7 @@ List <String>items=[
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 15,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

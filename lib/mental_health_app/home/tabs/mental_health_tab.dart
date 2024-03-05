@@ -3,10 +3,12 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/exercise.dart';
+
 class mentalHealthTab extends StatefulWidget {
   static const String routeName = "health";
 
-   mentalHealthTab({Key? key}) : super(key: key);
+  mentalHealthTab({Key? key}) : super(key: key);
 
   @override
   State<mentalHealthTab> createState() => _mentalHealthTabState();
@@ -24,19 +26,9 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.white,
-
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   backgroundColor: Colors.transparent,
-      //   title:  Image.asset("assets/images/health/logo.png"),
-      //   actions: [
-      //    Image.asset("assets/images/health/bell.png"),
-      //   ],
-      // ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
+        padding: const EdgeInsets.only(left: 30.0, right: 30, top: 40),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +41,7 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
                 children: [
@@ -70,7 +62,7 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
               Text(
                 "How are you feeling today ?",
@@ -85,64 +77,43 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                      height: 60,
-                      width: 60,
-                      child: Image.asset(
-                        "assets/images/health/love.png",
-                      )),
-                  Container(
-                    height: 60,
-                    width: 60,
-                    child: Image.asset(
-                      "assets/images/health/cool.png",
-                    ),
-                  ),
-                  Container(
-                      height: 60,
-                      width: 60,
-                      child: Image.asset(
-                        "assets/images/health/happy.png",
-                      )),
-                  Container(
-                    height: 60,
-                    width: 60,
-                    child: Image.asset(
-                      "assets/images/health/sad.png",
-                    ),
-                  ),
+                  buildContainerReaction("assets/images/health/love.png"),
+                  buildContainerReaction("assets/images/health/cool.png"),
+                  buildContainerReaction("assets/images/health/happy.png"),
+                  buildContainerReaction("assets/images/health/sad.png"),
                 ],
               ),
               SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal:
-                15.0),
-                child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Feature",
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Feature",
+                    style: GoogleFonts.inter(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "See more",
                       style: GoogleFonts.inter(
-                        fontSize: 18,
+                        fontSize: 14,
+                        color: Color(0xff027A48),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-
-                    InkWell(
-                      onTap: (){},
-                      child: Container(
-                        height: 20,
-                        width: 64,
-                        child: Image.asset(
-                          "assets/images/health/see_more.png",
-
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                  Icon(
+                    (Icons.keyboard_arrow_right_sharp),
+                    color: Color(0xff027A48),
+                    size: 20,
+                  ),
+                ],
               ),
               SizedBox(
                 height: 15,
@@ -165,96 +136,38 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
                   dotsCount: items.length,
                   position: currentIndex,
                   decorator: DotsDecorator(
-                    color: Color(0xffD9D9D9),
-                      activeColor: Color(0xff98A2B3)
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Exercise",
-                      style: GoogleFonts.inter(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-
-                    InkWell(
-                      onTap: (){},
-                      child: Container(
-                        height: 20,
-                        width: 64,
-                        child: Image.asset(
-                          "assets/images/health/see_more.png",
-
-                        ),
-                      ),
-                    ),
-                  ],
+                      color: Color(0xffD9D9D9), activeColor: Color(0xff98A2B3)),
                 ),
               ),
               SizedBox(
                 height: 15,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
-                  Container(
-                      height: 56,
-                      width: 151,
-                      decoration: BoxDecoration(
-                        color: Color(0xffF9F5FF),
-                        borderRadius: BorderRadius.circular(8)
+                  Text(
+                    "Exercise",
+                    style: GoogleFonts.inter(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "See more",
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: Color(0xff027A48),
+                        fontWeight: FontWeight.w600,
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                        children: [
-                          Image.asset(
-                            "assets/images/health/ic_relaxition.png",
-
-                          ),
-                          Text(
-                            "Relaxation",
-                            style: GoogleFonts.inter(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      )),
-                  Container(
-                    height: 56,
-                    width: 151,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFDF2FA),
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                        children: [
-                          Image.asset(
-                            "assets/images/health/ic_meditation.png",
-
-                          ),
-                          Text(
-                            "Meditation",
-                            style: GoogleFonts.inter(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      )
+                    ),
+                  ),
+                  Icon(
+                    (Icons.keyboard_arrow_right_sharp),
+                    color: Color(0xff027A48),
+                    size: 20,
                   ),
                 ],
               ),
@@ -262,58 +175,40 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
                 height: 15,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
-                  Container(
-                      height: 56,
-                      width: 151,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFFFAF5),
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                        children: [
-                          Image.asset(
-                            "assets/images/health/ic_breathing.png",
-
-                          ),
-                          Text(
-                            "Beathing",
-                            style: GoogleFonts.inter(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      )),
-                  Container(
-                      height: 56,
-                      width: 151,
-                      decoration: BoxDecoration(
-                          color: Color(0xffF0F9FF),
-                          borderRadius: BorderRadius.circular(8)
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                        children: [
-                          Image.asset(
-                            "assets/images/health/ic_yoga.png",
-
-                          ),
-                          Text(
-                            "Yoga",
-                            style: GoogleFonts.inter(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      )
+                  exercise(
+                    color: Color(0xffF9F5FF),
+                    imageUrl: "assets/images/health/ic_relaxition.png",
+                    label: "Relaxation",
                   ),
+                  exercise(
+                    color: Color(0xffFDF2FA),
+                    imageUrl: "assets/images/health/ic_meditation.png",
+                    label: "Meditation",
+                  ),
+
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  exercise(
+                    color: Color(0xffFFFAF5),
+                    imageUrl: "assets/images/health/ic_breathing.png",
+                    label: "Beathing",
+                  ),
+                  exercise(
+                    color: Color(0xffF0F9FF),
+
+                    imageUrl:"assets/images/health/ic_yoga.png",
+                    label: "Yoga",
+                  ),
+
+
                 ],
               ),
             ],
@@ -321,5 +216,14 @@ class _mentalHealthTabState extends State<mentalHealthTab> {
         ),
       ),
     );
+  }
+
+  Container buildContainerReaction(String url) {
+    return Container(
+        height: 60,
+        width: 60,
+        child: Image.asset(
+          url,
+        ));
   }
 }

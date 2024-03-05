@@ -1,11 +1,8 @@
-import 'package:exam_ui/mental_health_app/home/tabs/mental_health_tab.dart';
-import 'package:exam_ui/mental_health_app/home/tabs/tab_2.dart';
-import 'package:exam_ui/mental_health_app/home/tabs/tab_3.dart';
-import 'package:exam_ui/mental_health_app/home/tabs/tab_4.dart';
+
 import 'package:exam_ui/workout_app/home/tabs/tab_2.dart';
 import 'package:exam_ui/workout_app/home/tabs/tab_3.dart';
 import 'package:exam_ui/workout_app/home/tabs/tab_4.dart';
-import 'package:exam_ui/workout_app/home/tabs/tabbar/workout_tab.dart';
+import 'package:exam_ui/workout_app/home/tabs/workout_tab/workout_tab.dart';
 import 'package:flutter/material.dart';
 
 class homeScreenWorkout extends StatefulWidget {

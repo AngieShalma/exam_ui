@@ -1,5 +1,5 @@
 import 'package:exam_ui/news_app/home/tabs/chat_tab.dart';
-import 'package:exam_ui/news_app/home/tabs/insights_tab.dart';
+import 'package:exam_ui/news_app/home/tabs/insight_tab/insights_tab.dart';
 import 'package:exam_ui/news_app/home/tabs/today_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +18,8 @@ class _homeNewsScreenState extends State<homeNewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF9FAFB),
+      
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         unselectedItemColor: Color(0xff475467),
